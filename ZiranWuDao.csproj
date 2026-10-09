@@ -8,6 +8,11 @@
     <GameDir>D:\app\steam\steamapps\common\觅长生</GameDir>
     <WorkshopDir>D:\app\steam\steamapps\workshop\content\1189490</WorkshopDir>
   </PropertyGroup>
+  <!-- tools/ 下是独立的算法验证程序（自带 csproj），不能被主项目递归编译进来 -->
+  <ItemGroup>
+    <Compile Remove="tools\**" />
+    <None Remove="tools\**" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
   </ItemGroup>
